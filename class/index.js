@@ -4,11 +4,29 @@ class ProductManager {
   }
 
   addProducts(products){
-    this.products.push(products)
+    const { title, description, price, thumbnail, code, stock } = products;
+    if (
+      !title ||
+      !description ||
+      !price ||
+      !thumbnail ||
+      !code ||
+      !stock
+    ) {
+      console.log("Error: Faltan datos");
+      return;
+    }
+    if (this.products.some((p) => p.code === code)) {
+      console.log("Error: El código del producto ya existe");
+      return;
+    }
+    products.id = this.products.length + 1;
+    this.products.push(products);
   }
+  
 
   getProducts(){
-    console.log(this.products)
+    return [...this.products];
   }
 
   getProductsById(id){
