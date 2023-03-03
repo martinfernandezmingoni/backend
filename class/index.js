@@ -1,14 +1,34 @@
+const fs = require('fs')
+
+
 class ProductManager {
   constructor() {
     this.products = []
   }
 
-  addProducts(products){
-    this.products.push(products)
+  addProduct(product) {
+    const { title, description, price, thumbnail, code, stock } = product;
+    if (
+      !title ||
+      !description ||
+      !price ||
+      !thumbnail ||
+      !code ||
+      !stock
+    ) {
+      console.log("Error: Faltan datos");
+      return;
+    }
+    if (this.products.some((p) => p.code === code)) {
+      console.log("Error: El código del producto ya existe");
+      return;
+    }
+    product.id = this.products.length + 1;
+    this.products.push(product);
   }
 
   getProducts(){
-    console.log(this.products)
+    return [...this.products]
   }
 
   getProductsById(id){

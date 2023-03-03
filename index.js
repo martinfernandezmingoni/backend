@@ -1,8 +1,8 @@
-const ProductManager = require("./class");
+const ProductManager = require('./class');
 
 const productManager = new ProductManager()
 
-productManager.addProducts({
+productManager.addProduct({
   id:1,
   title:"JUAN",
   description:"PRODUCTO JUAN",
@@ -11,7 +11,7 @@ thumbnail:"Http//juan",
 code:"SuperJuan",
 stock:1
 })
-productManager.addProducts({
+productManager.addProduct({
   id:2,
   title:"NICO",
   description:"PRODUCTO NICO",
@@ -20,7 +20,7 @@ thumbnail:"Http//NICO",
 code:"nico",
 stock:1000
 })
-productManager.addProducts({
+productManager.addProduct({
   id:3,
   title:"Tincho",
   description:"PRODUCTO Tincho",
