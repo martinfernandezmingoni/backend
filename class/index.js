@@ -2,8 +2,10 @@ const fs = require('fs')
 
 
 class ProductManager {
-  constructor() {
+  constructor(file) {
+    const file = '../index.js'
     this.products = []
+    this.path = file
   }
 
   addProduct(product) {
